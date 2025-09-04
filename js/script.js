@@ -93,67 +93,13 @@ function initializeProjects() {
     console.log('프로젝트 초기화 중...');
 
     const projectCards = document.querySelectorAll('.project-card');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectGrids = document.querySelectorAll('.projects-grid[data-category]');
 
     if (projectCards.length === 0) {
         console.warn('프로젝트 카드를 찾을 수 없습니다.');
         return;
     }
 
-    // 필터 버튼 클릭 이벤트
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filter = button.getAttribute('data-filter');
 
-            // 활성 버튼 상태 변경
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            // 프로젝트 필터링
-            if (filter === 'all') {
-                // 모든 프로젝트 표시
-                projectCards.forEach(card => {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                    }, 10);
-                });
-                projectGrids.forEach(grid => {
-                    grid.style.display = 'grid';
-                });
-            } else {
-                // 특정 카테고리만 표시
-                projectCards.forEach(card => {
-                    const cardType = card.getAttribute('data-type');
-                    if (cardType === filter) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'scale(1)';
-                        }, 10);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'scale(0.8)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-
-                // 카테고리별 그리드 표시/숨김
-                projectGrids.forEach(grid => {
-                    const category = grid.getAttribute('data-category');
-                    if (category === filter) {
-                        grid.style.display = 'grid';
-                    } else {
-                        grid.style.display = 'none';
-                    }
-                });
-            }
-        });
-    });
 
     // 초기 상태 설정
     projectCards.forEach(card => {

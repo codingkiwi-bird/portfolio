@@ -247,7 +247,7 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -290,7 +290,7 @@ body {
 }
 
 .project-image {
-    height: 280px;
+    height: 400px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     align-items: center;
@@ -315,19 +315,7 @@ body {
     transform: rotate(45deg) translate(50%, 50%);
 }
 
-.project-icon {
-    font-size: 3rem;
-    color: white;
-    z-index: 2;
-    position: relative;
-    opacity: 0.9;
-    transition: all 0.3s ease;
-}
 
-.project-card:hover .project-icon {
-    transform: scale(1.1);
-    opacity: 1;
-}
 
 .project-content {
     padding: 1.75rem;
