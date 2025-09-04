@@ -255,11 +255,11 @@ function initializeContactForm() {
 // ===========================================
 
 function initializeHeroAnimation() {
-    console.log('히어로 애니메이션 초기화 중...');
-
+    const hero = document.querySelector('.hero');
     const heroContent = document.querySelector('.hero-content');
-    if (!heroContent) {
-        console.warn('히어로 콘텐츠를 찾을 수 없습니다.');
+
+    if (!hero || !heroContent) {
+        console.warn('히어로 요소를 찾을 수 없습니다.');
         return;
     }
 
@@ -272,8 +272,6 @@ function initializeHeroAnimation() {
         heroContent.style.opacity = '1';
         heroContent.style.transform = 'translateY(0)';
     }, 100);
-
-    console.log('히어로 애니메이션 초기화 완료');
 }
 
 // ===========================================
