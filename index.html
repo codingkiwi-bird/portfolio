@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 기본 메타 태그 -->
+    <title>포트폴리오 - [이름] | 프론트엔드 개발자</title>
+    <meta name="description" content="프론트엔드 개발자 [이름]의 포트폴리오입니다. React, Vue.js, JavaScript를 활용한 웹 개발 프로젝트를 소개합니다.">
+    <meta name="keywords" content="프론트엔드, 개발자, 포트폴리오, JavaScript, React, Vue.js, 웹 개발">
+    <meta name="author" content="[이름]">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph 메타 태그 (페이스북, 카카오톡 등 소셜 미디어 공유용) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="포트폴리오 - [이름] | 프론트엔드 개발자">
+    <meta property="og:description" content="프론트엔드 개발자 [이름]의 포트폴리오입니다. 다양한 웹 개발 프로젝트를 확인해보세요.">
+    <meta property="og:image" content="./images/og-image.jpg">
+    <meta property="og:url" content="https://[깃허브아이디].github.io/portfolio/">
+    <meta property="og:site_name" content="[이름]의 포트폴리오">
+
+    <!-- Twitter Card 메타 태그 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="포트폴리오 - [이름] | 프론트엔드 개발자">
+    <meta name="twitter:description" content="프론트엔드 개발자 [이름]의 포트폴리오입니다. 다양한 웹 개발 프로젝트를 확인해보세요.">
+    <meta name="twitter:image" content="./images/og-image.jpg">
+
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+
+    <!-- 외부 리소스 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 아이콘 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- GitHub Pages용 base 태그 (repository 이름에 맞게 수정 필요) -->
+    <!-- <base href="/[레포지토리이름]/"> -->
+</head>
+<body>
+    <!-- 컴포넌트 컨테이너들 -->
+    <div data-component="header"></div>
+
+    <main>
+        <div data-component="hero"></div>
+        <div data-component="about"></div>
+        <div data-component="projects"></div>
+        <div data-component="skills"></div>
+        <div data-component="contact"></div>
+    </main>
+
+    <div data-component="footer"></div>
+
+    <!-- 컴포넌트 로더 및 메인 스크립트 -->
+    <script src="./js/loader.js"></script>
+    <script src="./js/script.js"></script>
+
+    <!-- 컴포넌트 초기화 스크립트 -->
+    <script>
+        // 페이지 로드 후 모든 컴포넌트 로드
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // 모든 컴포넌트 로드
+                await componentLoader.loadComponents([
+                    { name: 'header', target: '[data-component="header"]' },
+                    { name: 'hero', target: '[data-component="hero"]' },
+                    { name: 'about', target: '[data-component="about"]' },
+                    { name: 'projects', target: '[data-component="projects"]' },
+                    { name: 'skills', target: '[data-component="skills"]' },
+                    { name: 'contact', target: '[data-component="contact"]' },
+                    { name: 'footer', target: '[data-component="footer"]' }
+                ]);
+
+                console.log('모든 컴포넌트가 성공적으로 로드되었습니다.');
+            } catch (error) {
+                console.error('컴포넌트 로드 중 오류 발생:', error);
+            }
+        });
+    </script>
+</body>
+</html>

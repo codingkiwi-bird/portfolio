@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow crawling of components folder (optional - for development)
+Disallow: /components/
+
+# Sitemap location
+Sitemap: https://[깃허브아이디].github.io/portfolio/sitemap.xml
