@@ -32,8 +32,7 @@ class ComponentLoader {
             }
 
             // 컴포넌트 파일 로드 (GitHub Pages 경로 고려)
-            const cacheBuster = `cb=${Date.now()}`;
-            const componentPath = `${this.basePath}/components/${componentName}.html?${cacheBuster}`;
+            const componentPath = `${this.basePath}/components/${componentName}.html`;
             const response = await fetch(componentPath);
             if (!response.ok) {
                 throw new Error(`Failed to load component: ${componentName} (${response.status})`);
