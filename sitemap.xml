@@ -3,15 +3,23 @@
   <!-- 메인 페이지 -->
   <url>
     <loc>https://[깃허브아이디].github.io/portfolio/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- 홈 섹션 (히어로) -->
+  <url>
+    <loc>https://[깃허브아이디].github.io/portfolio/#hero</loc>
+    <lastmod>2025-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- 소개 섹션 (메인 페이지 내 앵커) -->
   <url>
     <loc>https://[깃허브아이디].github.io/portfolio/#about</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -19,23 +27,15 @@
   <!-- 프로젝트 섹션 -->
   <url>
     <loc>https://[깃허브아이디].github.io/portfolio/#projects</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
-
-  <!-- 기술 스택 섹션 -->
-  <url>
-    <loc>https://[깃허브아이디].github.io/portfolio/#skills</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- 연락처 섹션 -->
   <url>
     <loc>https://[깃허브아이디].github.io/portfolio/#contact</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

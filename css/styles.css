@@ -181,15 +181,21 @@ body {
 
 .about-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
 }
 
 .about-text p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
     line-height: 1.8;
+}
+
+/* 소개 텍스트 블록을 전체 가운데 정렬 (문장 자체는 좌측 정렬 유지) */
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .about-stats {
@@ -291,7 +297,7 @@ body {
 }
 
 .project-image {
-    height: 280px;
+    height: 400px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     align-items: center;
@@ -490,7 +496,7 @@ body {
 
 /* 연락처 섹션 */
 .contact {
-    background-color: white;
+    background-color: #f8f9fa;
 }
 
 .contact-content {
