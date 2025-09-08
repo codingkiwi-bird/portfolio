@@ -1,0 +1,288 @@
+/* ===========================================
+   프로젝트 상세 페이지 전용 스타일
+   ========================================== */
+
+.project-detail-container {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.project-detail {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    min-height: 100vh;
+}
+
+.project-detail-header {
+    background-color: white;
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: #79afff;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #5a9fff;
+}
+
+.project-detail-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: 700;
+}
+
+.project-detail-content {
+    padding: 2rem;
+}
+
+.project-hero {
+    margin-bottom: 3rem;
+}
+
+.project-image-large {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-placeholder {
+    text-align: center;
+    color: white;
+    opacity: 0.8;
+}
+
+.project-placeholder i {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.project-placeholder p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.project-meta h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.project-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tag {
+    background-color: #79afff;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.project-sections {
+    margin-bottom: 3rem;
+}
+
+.project-section {
+    margin-bottom: 3rem;
+}
+
+.project-section h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.project-section h4 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.project-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.project-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-section li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.project-section li::before {
+    content: '•';
+    color: #79afff;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -0.1rem;
+}
+
+.tech-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.tech-category {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #79afff;
+}
+
+.tech-category h4 {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.tech-category p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.design-concept, .design-principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.concept-item, .principle-item {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.concept-item h4, .principle-item h4 {
+    color: #79afff;
+    margin-bottom: 0.75rem;
+}
+
+.concept-item p, .principle-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.project-link-detail {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #79afff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    border: 2px solid #79afff;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.project-link-detail:hover {
+    color: #1b2a41;
+    background-color: #79afff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(121, 175, 255, 0.35);
+}
+
+/* GitHub 전용 변형 (Git 주황색) */
+.github-link {
+    color: #f34f29;
+    border-color: #f34f29;
+}
+
+.github-link:hover {
+    color: #fff;
+    background-color: #f34f29;
+    box-shadow: 0 5px 15px rgba(243, 79, 41, 0.35);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .project-detail-header {
+        padding: 1.5rem 1rem 1rem;
+    }
+    
+    .project-detail-header h1 {
+        font-size: 2rem;
+    }
+    
+    .project-detail-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .project-image-large {
+        height: 250px;
+    }
+    
+    .project-meta h2 {
+        font-size: 1.5rem;
+    }
+    
+    .tech-details, .design-concept, .design-principles {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+}
