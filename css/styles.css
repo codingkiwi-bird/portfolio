@@ -69,7 +69,7 @@ body {
     background-size: cover, auto;
     background-position: 25% center, center;
     background-repeat: no-repeat, no-repeat;
-    color: white;
+    color: rgb(0, 0, 0);
     position: relative;
     overflow: hidden;
 }
@@ -95,7 +95,7 @@ body {
 }
 
 .hero .highlight {
-    color: #ffd700;
+    color: #79afff;
 }
 
 .hero-description {
@@ -124,24 +124,25 @@ body {
 }
 
 .btn-primary {
-    background-color: #3498db;
-    color: white;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
 }
 
 .btn-primary:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: white;
-    border: 2px solid white;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
 }
 
 .btn-secondary:hover {
-    background-color: white;
-    color: #3498db;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
 }
 
 /* 섹션 공통 스타일 */
