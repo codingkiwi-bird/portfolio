@@ -473,14 +473,25 @@ body {
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    align-items: start;
 }
 
 .contact-info {
     background-color: #f8f9fa;
     padding: 2rem;
     border-radius: 10px;
+}
+
+/* 우측 링크 영역을 좌측 정보 카드와 동일한 스타일로 정렬 */
+.contact-links {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    justify-self: end;
+    margin-left: auto;
+    max-width: 520px;
 }
 
 .contact-item {
@@ -490,10 +501,13 @@ body {
 .contact-item h4 {
     color: #2c3e50;
     margin-bottom: 0.5rem;
+    font-size: 1.1rem;
 }
 
 .contact-item p {
     color: #666;
+    font-size: 1.05rem;
+    line-height: 1.8;
 }
 
 .contact-item a {

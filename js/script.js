@@ -209,46 +209,8 @@ function initializeSkills() {
 }
 
 // ===========================================
-// 연락처 폼 기능
+// 연락처 섹션: 폼 제거 후 별도 초기화 불필요
 // ===========================================
-
-function initializeContactForm() {
-    console.log('연락처 폼 초기화 중...');
-
-    const form = document.querySelector('form');
-    if (!form) {
-        console.warn('연락처 폼을 찾을 수 없습니다.');
-        return;
-    }
-
-    // 폼 제출 처리
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        // 간단한 폼 검증
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-
-        if (!name || !email || !message) {
-            alert('모든 필드를 입력해주세요.');
-            return;
-        }
-
-        if (!isValidEmail(email)) {
-            alert('유효한 이메일 주소를 입력해주세요.');
-            return;
-        }
-
-        // 실제로는 서버로 데이터를 전송해야 하지만, 여기서는 데모용으로 알림만 표시
-        alert('메시지가 성공적으로 전송되었습니다!');
-
-        // 폼 초기화
-        e.target.reset();
-    });
-
-    console.log('연락처 폼 초기화 완료');
-}
 
 // ===========================================
 // 히어로 섹션 애니메이션
@@ -287,7 +249,6 @@ function initializePortfolio() {
         initializeHeader();
         initializeProjects();
         initializeSkills();
-        initializeContactForm();
         initializeHeroAnimation();
 
         console.log('포트폴리오 초기화 완료! 🎉');
@@ -319,7 +280,7 @@ function onComponentLoaded(componentName) {
             initializeSkills();
             break;
         case 'contact':
-            initializeContactForm();
+            // 폼 제거: 추가 초기화 없음
             break;
         default:
             break;
