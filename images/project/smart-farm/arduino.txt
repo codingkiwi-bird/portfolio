@@ -1,0 +1,68 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h> // LCD 사용을 위한 라이브러리 추가 필요
+
+LiquidCrystal_I2C lcd(0x27,16,2);
+
+int water; // 변수 water 습도가 얼마인지 아날로그 변수로 계산
+const int POT = 0; // 습도 센서는 아날로그 0번 포트
+
+// 상태 정의 및 상태 변경 디바운싱을 위한 변수들
+enum State { STATE_MOVING, STATE_DRY, STATE_ENOUGH };
+int stableState = STATE_ENOUGH;       // 현재 확정된(안정화된) 상태
+int candidateState = STATE_ENOUGH;    // 바뀌려는 후보 상태
+unsigned long candidateSince = 0;     // 후보 상태가 시작된 시각(ms)
+
+void setup() {
+    pinMode(3,OUTPUT); // 수중 펌프는 디지털로 작동 ON / OFF
+    Serial.begin(9600); // 시리얼 넘버로 작동상태 확인
+    lcd.init(); // LCD 사용을 위한 초기 선언
+    lcd.backlight();
+}
+
+void loop() {
+    water = analogRead(POT); // 습도 값을 읽어와 water 변수에 할당
+    Serial.println(water); // 시리얼 포트에 water 값 출력
+
+    // 현재 측정값으로 즉시 계산한 상태
+    int currentState;
+    if (water > 910) {
+        currentState = STATE_MOVING;           // 센서 이동/비토양 추정
+    } else if (water <= 910 && water >= 730) {
+        currentState = STATE_DRY;              // 건조
+    } else {
+        currentState = STATE_ENOUGH;           // 충분히 적셔짐
+    }
+
+    // 상태 변경 디바운싱: 새로운 상태가 3초 이상 유지되어야 확정
+    if (currentState != stableState) {
+        if (candidateState != currentState) {
+            candidateState = currentState;
+            candidateSince = millis();
+        } else if (millis() - candidateSince >= 3000UL) {
+            stableState = currentState; // 3초 유지됨 → 상태 확정
+        }
+    } else {
+        candidateState = stableState; // 동기화
+        candidateSince = millis();
+    }
+
+    // 확정된 상태에 따라 동작 수행
+    if (stableState == STATE_MOVING) {
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Sensor Moving");
+        digitalWrite(3,LOW); // 센서를 이동중이므로 물 공급 안함
+    } else if (stableState == STATE_DRY) {
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Water Bomb"); // 수중펌프가 작동함을 LCD로 알림
+        //Serial.println("워터밤"); // 시리얼 모니터로 확인할 수도 있음.
+        digitalWrite(3,HIGH); // 수중펌프 작동
+    } else { // STATE_ENOUGH
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Enough"); // 적절한 습도
+        digitalWrite(3,LOW); // 수중 펌프 해제
+    }
+    delay(400); // 수중 펌프에서 너무 많은 양의 물이 들어가지 않게 딜레이 적용
+}
