@@ -65,7 +65,7 @@ body {
     display: flex;
     align-items: center;
     padding: 120px 2rem 4rem;
-    background: url('../images/image_extended.png'), linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: url('../images/image_extended.png');
     background-size: cover, auto;
     background-position: 25% center, center;
     background-repeat: no-repeat, no-repeat;
