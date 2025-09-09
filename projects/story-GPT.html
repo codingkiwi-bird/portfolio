@@ -1,51 +1,56 @@
 <div class="project-detail">
     <header class="project-detail-header">
-        <button class="back-button" onclick="router.goBack()">
-            <i class="fas fa-arrow-left"></i> 뒤로가기
-        </button>
-        <h1>쇼핑몰 웹사이트</h1>
+        <h1>story-GPT</h1>
     </header>
     
     <div class="project-detail-content">
         <div class="project-hero">
             <div class="project-image-large">
-                <div class="project-placeholder">
-                    <i class="fas fa-shopping-cart fa-4x"></i>
-                    <p>프로젝트 스크린샷</p>
+                <div class="slider" data-slider="story-gpt">
+                    <div class="slides">
+                        <div class="slide" style="background-image: url('./images/project/story-GPT/story-gpt-01.png');"></div>
+                        <div class="slide" style="background-image: url('./images/project/story-GPT/story-gpt-02.png');"></div>
+                        <div class="slide" style="background-image: url('./images/project/story-GPT/story-gpt-03.png');"></div>
+                        <div class="slide" style="background-image: url('./images/project/story-GPT/story-gpt-04.png');"></div>
+                    </div>
+                    <button class="slider-btn prev" aria-label="이전" data-action="prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-btn next" aria-label="다음" data-action="next"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
             <div class="project-meta">
-                <h2>React와 Node.js를 활용한 풀스택 전자상거래 플랫폼</h2>
-                <p class="project-subtitle">사용자 친화적인 인터페이스와 안전한 결제 시스템을 구현한 종합 쇼핑몰</p>
+                <h2>OpenAI API를 활용한 스토리텔링 웹 서비스</h2>
+                <p class="project-subtitle">사용자가 선택지를 고르며 이야기를 전개해 나가는 인터랙티브 스토리 플랫폼입니다. 
+                    OpenAI API를 통해 장면마다 자연스러운 내러티브를 생성하고, 선택 결과에 맞춘 다음 전개를 즉시 이어갑니다.</p>
                 
                 <div class="project-tags">
-                    <span class="tag">React</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
                     <span class="tag">Node.js</span>
-                    <span class="tag">MongoDB</span>
-                    <span class="tag">Express</span>
+                    <span class="tag">SQLite</span>
+                    <span class="tag">OpenAI</span>
                 </div>
             </div>
         </div>
         
         <div class="project-sections">
             <section class="project-section">
-                <h3>프로젝트 개요</h3>
+                <h3>프로젝트 목표</h3>
                 <p>
-                    React를 활용한 프론트엔드와 Node.js 기반의 백엔드로 구성된 풀스택 전자상거래 플랫폼입니다. 
-                    사용자가 쉽게 상품을 검색하고 구매할 수 있는 직관적인 인터페이스를 제공하며, 
-                    관리자는 효율적으로 상품과 주문을 관리할 수 있습니다.
+                    OpenAI API를 이용해 사용자의 프롬프트와 현재까지의 플롯을 바탕으로 다음 장면의 스토리를 생성합니다. 
+                    생성되는 스토리 및 선택지들이 정상적인 범주내에서 출력되도록 프롬프트 엔지니어링을 진행합니다.
+                    최종 스토리를 출력후에는 저장하고 공유할수 있는 플렛폼을 제공합니다.
                 </p>
             </section>
 
             <section class="project-section">
                 <h3>주요 기능</h3>
                 <ul>
-                    <li>사용자 회원가입 및 로그인 시스템</li>
-                    <li>상품 검색 및 필터링 기능</li>
-                    <li>장바구니 및 위시리스트 관리</li>
-                    <li>안전한 결제 시스템 연동</li>
-                    <li>주문 내역 및 배송 추적</li>
-                    <li>관리자 대시보드 (상품/주문 관리)</li>
+                    <li>스토리 생성</li>
+                    <li>선택지 생성 및 선택</li>
+                    <li>선택지에 따른 새로운 스토리 생성</li>
+                    <li>완성된 스토리 공유</li>
+                    <li>공유된 스토리 감상</li>
                 </ul>
             </section>
 
@@ -54,19 +59,20 @@
                 <div class="tech-details">
                     <div class="tech-category">
                         <h4>Frontend</h4>
-                        <p>React, Redux, React Router, Styled Components</p>
+                        <p>HTML, CSS, JavaScript</p>
                     </div>
                     <div class="tech-category">
                         <h4>Backend</h4>
-                        <p>Node.js, Express.js, JWT Authentication</p>
+                        <p>Node.js (Express)</p>
                     </div>
                     <div class="tech-category">
                         <h4>Database</h4>
-                        <p>MongoDB, Mongoose ODM</p>
+                        <p>SQLite</p>
                     </div>
                     <div class="tech-category">
-                        <h4>기타</h4>
-                        <p>Stripe API, Cloudinary, Heroku</p>
+                        <h4>etc</h4>
+                        <p>OpenAI API (GPT)</p>
+                        <p>git</p>
                     </div>
                 </div>
             </section>
@@ -74,15 +80,15 @@
             <section class="project-section">
                 <h3>개발 과정에서 배운 점</h3>
                 <p>
-                    이 프로젝트를 통해 풀스택 개발의 전체적인 흐름을 경험할 수 있었습니다. 
-                    특히 사용자 인증, 결제 시스템 연동, 데이터베이스 설계 등 실제 서비스에 필요한 
-                    핵심 기능들을 구현하면서 실무에 가까운 개발 경험을 쌓을 수 있었습니다.
+                    초기에는 단일 스토리 생성 API로 모든 단계를 처리해 인트로와 엔딩이 이상하게 출력되는 문제가 반복되었습니다.
+                    엔드포인트를 인트로·전개·엔딩으로 분리하고 단계별 프롬프트와 출력 제약을 달리 적용하여 프롬프트 엔지니어링을 통해
+                    인트로는 시작하는 느낌과 엔딩은 끝나는 느낌으로 결과가 안정적으로 생성되어 전반적인 스토리 완성도가 개선할 수 있었습니다.
                 </p>
             </section>
         </div>
         
         <div class="project-links">
-            <a href="https://github.com/username/shopping-mall" class="project-link-detail github-link" target="_blank">
+            <a href="https://github.com/codingkiwi-bird/story-GPT" class="project-link-detail github-link" target="_blank">
                 <i class="fab fa-github"></i> GitHub 저장소
             </a>
         </div>

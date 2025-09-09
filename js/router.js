@@ -56,19 +56,30 @@ class SimpleRouter {
                 mainElement.style.display = 'none';
             }
 
-            // 상세 페이지 컨테이너 생성 또는 표시
+            // 상세 페이지 컨테이너 생성 또는 표시 (푸터 위에 삽입)
             let detailContainer = document.getElementById('project-detail-container');
             if (!detailContainer) {
                 detailContainer = document.createElement('div');
                 detailContainer.id = 'project-detail-container';
                 detailContainer.className = 'project-detail-container';
-                document.body.appendChild(detailContainer);
+                const footerMount = document.querySelector('[data-component="footer"]');
+                if (footerMount && footerMount.parentNode) {
+                    footerMount.parentNode.insertBefore(detailContainer, footerMount);
+                } else {
+                    // 폴백: body 끝에 추가
+                    document.body.appendChild(detailContainer);
+                }
             }
 
             // 상세 페이지 HTML 로드
             const detailHtml = await this.loadProjectDetail(projectId);
             detailContainer.innerHTML = detailHtml;
             detailContainer.style.display = 'block';
+
+            // 상세 콘텐츠가 DOM에 반영된 뒤 슬라이더 초기화
+            if (typeof window.initializeSliders === 'function') {
+                window.initializeSliders();
+            }
 
             // 스크롤을 맨 위로
             window.scrollTo(0, 0);

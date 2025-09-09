@@ -342,16 +342,62 @@ document.addEventListener('DOMContentLoaded', () => {
     // 컴포넌트 로더가 준비될 때까지 대기
     if (typeof componentLoader !== 'undefined') {
         initializePortfolio();
+        initializeSliders();
     } else {
         // 컴포넌트 로더가 아직 로드되지 않은 경우
         const checkLoader = setInterval(() => {
             if (typeof componentLoader !== 'undefined') {
                 clearInterval(checkLoader);
                 initializePortfolio();
+                initializeSliders();
             }
         }, 100);
     }
 });
+
+// 간단한 이미지 슬라이더 초기화 함수
+function initializeSliders() {
+    const sliders = document.querySelectorAll('.slider');
+    sliders.forEach((slider) => {
+        const slides = slider.querySelector('.slides');
+        const slideCount = slider.querySelectorAll('.slide').length;
+        let index = 0;
+
+        const update = () => {
+            if (slides) {
+                slides.style.transform = `translateX(-${index * 100}%)`;
+            }
+            // 버튼 상태 업데이트
+            if (prevBtn) prevBtn.disabled = index === 0;
+            if (nextBtn) nextBtn.disabled = index === slideCount - 1;
+        };
+
+        const prevBtn = slider.querySelector('[data-action="prev"]');
+        const nextBtn = slider.querySelector('[data-action="next"]');
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (index > 0) {
+                    index = index - 1;
+                }
+                update();
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (index < slideCount - 1) {
+                    index = index + 1;
+                }
+                update();
+            });
+        }
+
+        // 초기 위치 및 중앙 정렬 보정
+        update();
+    });
+}
+
+// 전역으로 노출하여 라우터에서 재초기화 가능
+window.initializeSliders = initializeSliders;
 
 // ===========================================
 // 개발자 콘솔용 유틸리티 함수들
