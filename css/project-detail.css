@@ -290,6 +290,13 @@
     box-shadow: 0 5px 15px rgba(243, 79, 41, 0.35);
 }
 
+/* 알고리즘 다이어그램 이미지 */
+.algorithm-image {
+    width: 100%;
+    height: auto;
+    border: none;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 768px) {
     .project-detail-header {
